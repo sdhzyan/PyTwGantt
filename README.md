@@ -9,9 +9,11 @@ python 2.7、Django 1.11.7以及前端插件Gantt editor(http://roberto.open-lab
 
 2.安装
 
+安装前检查APP文件夹名是否为TwGantt,若为PyTwGantt，请先改名。
+
 step 1. 在你的Django项目setting.py中配置INSTALLED_APPS,添加 'TwGantt'
 
-step 2. 在你的Django项目setting.py中配置用户登录链接 LOGIN_URL = '/TwGantt/login/'
+step 2. 在你的Django项目urls.py中'from django.conf.urls import url'后添加',include'
 
 step 3. 在你的Django项目urls.py中配置urlpatterns,添加 url(r'^TwGantt/', include("TwGantt.urls"))
 
@@ -27,6 +29,9 @@ step 4. 使用makemigrations及migrate把models同步到数据库中
 
 更新说明:
 
+2018-01-18
+
+添加简单的日志功能
 
 2018-01-17
 
