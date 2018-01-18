@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>PyTwGantt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static "css/login_style.css" %}" rel='stylesheet' type='text/css' />
+</head>
+<body>
+	<div class="main">
+		<div class="login">
+			<h1>PyTwGantt</h1>
+			<div class="inset">
+				<!--start-main-->
+				<form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                    {% csrf_token %}
+			         <div>
+			         	<h2>Login</h2>
+						<span><label>用户名</label></span>
+						<span>{{ form.username }}</span>
+					 </div>
+					 <div>
+						<span><label>密码</label></span>
+					    <span>{{ form.userpwd }}</span>
+					 </div>
+                    <div>
+                        <span>
+                            <strong style="color: Red">{{ form.username.errors }}</strong>
+                            <strong style="color: Red">{{ form.userpwd.errors }}</strong>
+                        </span>
+                    </div>
+					<div class="sign">
+                        <input type="submit" value="登录" class="submit" />
+					</div>
+					</form>
+				</div>
+			</div>
+		<!--//end-main-->
+		</div>
+</body>
+</html>
